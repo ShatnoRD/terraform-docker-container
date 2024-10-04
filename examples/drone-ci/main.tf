@@ -42,7 +42,7 @@ resource "docker_image" "drone_runner" {
 }
 
 module "postgres" {
-    source = "../../"
+    source  = "ShatnoRD/container/docker"
 
     image_id       = docker_image.drone_postgres.image_id
     container_name = "drone-db"
@@ -68,7 +68,7 @@ module "postgres" {
     }]
 }
 module "drone" {
-    source = "../../"
+    source  = "ShatnoRD/container/docker"
 
     image_id       = docker_image.drone.image_id
     container_name = "drone-app"
@@ -98,7 +98,7 @@ module "drone" {
     }]
 }
 module "drone-runner" {
-    source = "../../"
+    source  = "ShatnoRD/container/docker"
 
     image_id       = docker_image.drone_runner.image_id
     container_name = "drone-runner"

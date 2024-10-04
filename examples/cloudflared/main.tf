@@ -13,7 +13,7 @@ resource "docker_image" "cloudflared" {
 }
 
 module "cloudflared" {
-  source = "../../"
+  source  = "ShatnoRD/container/docker"
 
   image_id          = docker_image.cloudflared.image_id
   container_name    = "cloudflared-app"

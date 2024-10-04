@@ -17,7 +17,7 @@ resource "docker_image" "nginx" {
 }
 
 module "proxy_app_hostmode" {
-   source = "../../"
+   source  = "ShatnoRD/container/docker"
 
     image_id       = docker_image.nginx.image_id
     container_name = "nginx-proxy-app1"
@@ -34,7 +34,7 @@ module "proxy_app_hostmode" {
     }]
 }
 module "proxy_app_bridgemode" {
-   source = "../../"
+   source  = "ShatnoRD/container/docker"
 
     image_id       = docker_image.nginx.image_id
     container_name = "nginx-proxy-app2"
